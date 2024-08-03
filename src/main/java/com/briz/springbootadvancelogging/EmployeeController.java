@@ -20,7 +20,7 @@ Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 @RequestMapping("/test")
 public String test()
 {
-		logger.info("Application started for kanchan log appication");
+		logger.info("Application started for kanchan log application");
 		return "This is logger test";
 
 }
@@ -29,11 +29,16 @@ public String save()
 {
 	logger.info("data saving started");
 	Employee employee=new Employee();
-	employee.setAge(12);
-	employee.setName("manu");
-	employee.setCity("tatanagar");
+	employee.setAge(89);
+	employee.setName("manish");
+	employee.setCity("h bagh");
 	erepo.save(employee);
 	logger.warn("data saved into database");
+	logger.error("this log is from error");
+	logger.info("this log is from info");
+	logger.debug("this log is from debug");// this is not by default
+	logger.trace("this log is from trace");// this is also not by default
+	
 	return "data saved";
 }
 @RequestMapping("/all")
